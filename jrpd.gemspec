@@ -4,8 +4,9 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'jrpd/version'
 
 Gem::Specification.new do |spec|
+  spec.platform      = "java"
   spec.name          = "jrpd"
-  spec.version       = Jrpd::VERSION
+  spec.version       = JRPD::VERSION
   spec.authors       = ["Simon Break", "Matthew Simpson"]
   spec.email         = ["simonbreak@gmail.com"]
   spec.summary       = "A simple JRuby wrapper for the libpd Java API"
