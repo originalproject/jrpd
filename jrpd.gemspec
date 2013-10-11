@@ -6,11 +6,10 @@ require 'jrpd/version'
 Gem::Specification.new do |spec|
   spec.name          = "jrpd"
   spec.version       = Jrpd::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.authors       = ["Simon Break", "Matthew Simpson"]
+  spec.email         = ["simonbreak@gmail.com"]
+  spec.summary       = "A simple JRuby wrapper for the libpd Java API"
+  spec.homepage      = "https://github.com/originalproject/jrpd"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

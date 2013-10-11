@@ -1,0 +1,8 @@
+#N canvas 317 238 450 300 10;
+#X obj 105 146 + 1;
+#X obj 37 51 r from_jrpd;
+#X obj 123 85 r float_from_jrpd;
+#X obj 37 182 s to_jrpd;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
