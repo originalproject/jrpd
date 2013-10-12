@@ -40,5 +40,35 @@ module JRPD
 			JavaApi::PdBase.send_message(@name, message_type, args.to_java)
 		end
 
+		def send_unstructured_message(u_msg)
+			head, *tail = u_msg
+				.scan(/([^\s"']+)|"([^"]*)"|'([^']*)'/)
+				.flatten
+				.compact
+				.map { |s| int_or_float_from_string(s) }
+			send_message(head, tail)
+		end
+
+		private
+
+		def int_or_float_from_string(s)
+			if int?(s)
+				s.to_i
+			elsif float?(s)
+				s.to_f
+			else
+				s
+			end
+		end
+
+		def int?(s)
+			!!(s =~ /^[-+]?[0-9]+$/)
+		end
+
+		def float?(s)
+			# matches 0.0 or .0 or 0.
+			!!(s =~ /^[-+]?([0-9]+\.[0-9]*)|(\.[0-9]+)$/)
+		end
+
   end
 end
